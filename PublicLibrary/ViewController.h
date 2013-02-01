@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NZUILibrary.h"
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet NZNavigationBar *navigationBar;
 @end

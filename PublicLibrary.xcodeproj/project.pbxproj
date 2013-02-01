@@ -18,6 +18,8 @@
 		857A54A216BB5E8500CD0312 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 857A54A116BB5E8500CD0312 /* Default-568h@2x.png */; };
 		857A54A516BB5E8500CD0312 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 857A54A316BB5E8500CD0312 /* MainStoryboard.storyboard */; };
 		857A54A816BB5E8500CD0312 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 857A54A716BB5E8500CD0312 /* ViewController.m */; };
+		857A54B116BB5FE500CD0312 /* NZNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 857A54B016BB5FE500CD0312 /* NZNavigationBar.m */; };
+		857A54B416BB621100CD0312 /* NZViewElementDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 857A54B316BB621100CD0312 /* NZViewElementDrawing.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,11 @@
 		857A54A416BB5E8500CD0312 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		857A54A616BB5E8500CD0312 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		857A54A716BB5E8500CD0312 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		857A54AF16BB5FE500CD0312 /* NZNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NZNavigationBar.h; path = UILibrary/NZNavigationBar.h; sourceTree = "<group>"; };
+		857A54B016BB5FE500CD0312 /* NZNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NZNavigationBar.m; path = UILibrary/NZNavigationBar.m; sourceTree = "<group>"; };
+		857A54B216BB621100CD0312 /* NZViewElementDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NZViewElementDrawing.h; path = UILibrary/NZViewElementDrawing.h; sourceTree = "<group>"; };
+		857A54B316BB621100CD0312 /* NZViewElementDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NZViewElementDrawing.m; path = UILibrary/NZViewElementDrawing.m; sourceTree = "<group>"; };
+		857A54B516BB67A800CD0312 /* NZUILibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NZUILibrary.h; path = UILibrary/NZUILibrary.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +90,7 @@
 		857A549116BB5E8400CD0312 /* PublicLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				857A54AE16BB5FA900CD0312 /* UILibrary */,
 				857A549A16BB5E8400CD0312 /* AppDelegate.h */,
 				857A549B16BB5E8400CD0312 /* AppDelegate.m */,
 				857A54A316BB5E8500CD0312 /* MainStoryboard.storyboard */,
@@ -105,6 +113,18 @@
 				857A54A116BB5E8500CD0312 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		857A54AE16BB5FA900CD0312 /* UILibrary */ = {
+			isa = PBXGroup;
+			children = (
+				857A54AF16BB5FE500CD0312 /* NZNavigationBar.h */,
+				857A54B016BB5FE500CD0312 /* NZNavigationBar.m */,
+				857A54B216BB621100CD0312 /* NZViewElementDrawing.h */,
+				857A54B316BB621100CD0312 /* NZViewElementDrawing.m */,
+				857A54B516BB67A800CD0312 /* NZUILibrary.h */,
+			);
+			name = UILibrary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +196,8 @@
 				857A549816BB5E8400CD0312 /* main.m in Sources */,
 				857A549C16BB5E8400CD0312 /* AppDelegate.m in Sources */,
 				857A54A816BB5E8500CD0312 /* ViewController.m in Sources */,
+				857A54B116BB5FE500CD0312 /* NZNavigationBar.m in Sources */,
+				857A54B416BB621100CD0312 /* NZViewElementDrawing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,6 +14,15 @@
 
 @implementation ViewController
 
+@synthesize navigationBar = _navigationBar;
+
+
+-(void)viewWillAppear:(BOOL)animated{
+    self.navigationBar.roundedCornerRadius = 5;
+    self.navigationBar.roundCornerType = UIViewRoundCornerBottomLeft | UIViewRoundCornerBottomRight | UIViewRoundCornerTopLeft | UIViewRoundCornerTopRight;
+//    self.navigationBar.roundCornerColor = [UIColor redColor];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
