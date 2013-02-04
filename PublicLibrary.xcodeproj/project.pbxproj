@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		699150DE16BFE1A80030CC87 /* NZNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 699150DD16BFE1A80030CC87 /* NZNotificationCenter.m */; };
 		8540D4A216BF6830008FA689 /* NZStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 8540D4A116BF6830008FA689 /* NZStack.m */; };
 		857A548C16BB5E8400CD0312 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 857A548B16BB5E8400CD0312 /* UIKit.framework */; };
 		857A548E16BB5E8400CD0312 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 857A548D16BB5E8400CD0312 /* Foundation.framework */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		699150DC16BFE1A80030CC87 /* NZNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NZNotificationCenter.h; path = BasicObject/NZNotificationCenter.h; sourceTree = "<group>"; };
+		699150DD16BFE1A80030CC87 /* NZNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NZNotificationCenter.m; path = BasicObject/NZNotificationCenter.m; sourceTree = "<group>"; };
 		8540D4A016BF6830008FA689 /* NZStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NZStack.h; path = BasicObject/NZStack.h; sourceTree = "<group>"; };
 		8540D4A116BF6830008FA689 /* NZStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NZStack.m; path = BasicObject/NZStack.m; sourceTree = "<group>"; };
 		857A548816BB5E8400CD0312 /* PublicLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PublicLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +69,8 @@
 		8540D49F16BF67F0008FA689 /* BasicObject */ = {
 			isa = PBXGroup;
 			children = (
+				699150DC16BFE1A80030CC87 /* NZNotificationCenter.h */,
+				699150DD16BFE1A80030CC87 /* NZNotificationCenter.m */,
 				8540D4A016BF6830008FA689 /* NZStack.h */,
 				8540D4A116BF6830008FA689 /* NZStack.m */,
 			);
@@ -212,6 +217,7 @@
 				857A54B116BB5FE500CD0312 /* NZNavigationBar.m in Sources */,
 				857A54B416BB621100CD0312 /* NZViewElementDrawing.m in Sources */,
 				8540D4A216BF6830008FA689 /* NZStack.m in Sources */,
+				699150DE16BFE1A80030CC87 /* NZNotificationCenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
