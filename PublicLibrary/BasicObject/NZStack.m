@@ -39,6 +39,8 @@
 -(void)push:(id)obj{
     if (self.objectArray == nil) {
         self.objectArray = [[NSMutableArray alloc] initWithCapacity:0];
+        
+        UITableView
     }
     [self.objectArray insertObject:obj atIndex:[self.objectArray count]];
 }
