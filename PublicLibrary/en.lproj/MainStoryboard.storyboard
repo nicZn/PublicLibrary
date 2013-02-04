@@ -14,7 +14,10 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qDx-ea-g8Y" customClass="NZNavigationBar">
                                 <items>
-                                    <navigationItem title="Title" id="7AO-X3-E54"/>
+                                    <navigationItem title="Title" id="tIM-sJ-IY9">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" id="sAE-fX-Ujl"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" id="MVf-e4-e2E"/>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>

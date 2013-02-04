@@ -18,13 +18,14 @@
 
 
 -(void)viewWillAppear:(BOOL)animated{
-    self.navigationBar.roundedCornerRadius = 5;
-    self.navigationBar.roundCornerType = UIViewRoundCornerBottomLeft | UIViewRoundCornerBottomRight | UIViewRoundCornerTopLeft | UIViewRoundCornerTopRight;
-//    self.navigationBar.roundCornerColor = [UIColor redColor];
+    self.navigationBar.roundedCornerRadius = 8;
+    self.navigationBar.roundCornerType = UIViewRoundCornerTopLeft | UIViewRoundCornerTopRight;
 }
 
 - (void)viewDidLoad
 {
+//    NSLog(@"%s, %d, %s, %s",__FILE__ , __LINE__, __PRETTY_FUNCTION__, __FUNCTION__);
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8540D4A216BF6830008FA689 /* NZStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 8540D4A116BF6830008FA689 /* NZStack.m */; };
 		857A548C16BB5E8400CD0312 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 857A548B16BB5E8400CD0312 /* UIKit.framework */; };
 		857A548E16BB5E8400CD0312 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 857A548D16BB5E8400CD0312 /* Foundation.framework */; };
 		857A549016BB5E8400CD0312 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 857A548F16BB5E8400CD0312 /* CoreGraphics.framework */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8540D4A016BF6830008FA689 /* NZStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NZStack.h; path = BasicObject/NZStack.h; sourceTree = "<group>"; };
+		8540D4A116BF6830008FA689 /* NZStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NZStack.m; path = BasicObject/NZStack.m; sourceTree = "<group>"; };
 		857A548816BB5E8400CD0312 /* PublicLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PublicLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		857A548B16BB5E8400CD0312 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		857A548D16BB5E8400CD0312 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -60,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8540D49F16BF67F0008FA689 /* BasicObject */ = {
+			isa = PBXGroup;
+			children = (
+				8540D4A016BF6830008FA689 /* NZStack.h */,
+				8540D4A116BF6830008FA689 /* NZStack.m */,
+			);
+			name = BasicObject;
+			sourceTree = "<group>";
+		};
 		857A547F16BB5E8400CD0312 = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +102,7 @@
 		857A549116BB5E8400CD0312 /* PublicLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				8540D49F16BF67F0008FA689 /* BasicObject */,
 				857A54AE16BB5FA900CD0312 /* UILibrary */,
 				857A549A16BB5E8400CD0312 /* AppDelegate.h */,
 				857A549B16BB5E8400CD0312 /* AppDelegate.m */,
@@ -198,6 +211,7 @@
 				857A54A816BB5E8500CD0312 /* ViewController.m in Sources */,
 				857A54B116BB5FE500CD0312 /* NZNavigationBar.m in Sources */,
 				857A54B416BB621100CD0312 /* NZViewElementDrawing.m in Sources */,
+				8540D4A216BF6830008FA689 /* NZStack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +334,7 @@
 				857A54AD16BB5E8500CD0312 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
