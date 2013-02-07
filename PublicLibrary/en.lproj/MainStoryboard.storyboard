@@ -28,27 +28,14 @@
                                 </segments>
                                 <color key="tintColor" red="0.29663265005269834" green="0.95548139393413989" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ywp-gm-Sea">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="375" id="kqi-Nn-Wfl"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="dataSource" destination="2" id="vb1-nb-5ct"/>
-                                    <outlet property="delegate" destination="2" id="4lj-Ln-V8r"/>
-                                </connections>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yEh-X9-Kc9" firstAttribute="top" secondItem="qDx-ea-g8Y" secondAttribute="bottom" type="default" id="Fnz-3S-vo4"/>
                             <constraint firstItem="yEh-X9-Kc9" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="H8k-YU-1A0"/>
-                            <constraint firstItem="Ywp-gm-Sea" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="RuJ-kg-CXP"/>
-                            <constraint firstItem="Ywp-gm-Sea" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="Sh3-Yd-puv"/>
                             <constraint firstItem="qDx-ea-g8Y" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="Vsh-0G-sGl"/>
                             <constraint firstItem="yEh-X9-Kc9" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="aEW-TG-bQh"/>
+                            <constraint firstItem="yEh-X9-Kc9" firstAttribute="top" secondItem="3" secondAttribute="top" constant="43" id="dj3-yg-Pwo"/>
                             <constraint firstItem="qDx-ea-g8Y" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="gC0-bA-bO1"/>
-                            <constraint firstItem="Ywp-gm-Sea" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="lV4-Bv-oSy"/>
                             <constraint firstItem="qDx-ea-g8Y" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="rwv-4Y-tR3"/>
                         </constraints>
                     </view>

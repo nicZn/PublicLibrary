@@ -23,6 +23,9 @@
 		857A54B116BB5FE500CD0312 /* NZNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 857A54B016BB5FE500CD0312 /* NZNavigationBar.m */; };
 		857A54B416BB621100CD0312 /* NZViewElementDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = 857A54B316BB621100CD0312 /* NZViewElementDrawing.m */; };
 		858B43C416C24A69007C48E3 /* NSData+Encode.m in Sources */ = {isa = PBXBuildFile; fileRef = 858B43C316C24A69007C48E3 /* NSData+Encode.m */; };
+		85AB639616C343DD004B4263 /* NZComboBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 85AB639516C343DD004B4263 /* NZComboBox.m */; };
+		85C03AF416C3765A00B089A3 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 85C03AF216C3765A00B089A3 /* up.png */; };
+		85C03AF516C3765A00B089A3 /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 85C03AF316C3765A00B089A3 /* down.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +56,10 @@
 		857A54B516BB67A800CD0312 /* NZUILibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NZUILibrary.h; path = UILibrary/NZUILibrary.h; sourceTree = "<group>"; };
 		858B43C216C24A69007C48E3 /* NSData+Encode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Encode.h"; path = "Encode/NSData+Encode.h"; sourceTree = "<group>"; };
 		858B43C316C24A69007C48E3 /* NSData+Encode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Encode.m"; path = "Encode/NSData+Encode.m"; sourceTree = "<group>"; };
+		85AB639416C343DD004B4263 /* NZComboBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NZComboBox.h; sourceTree = "<group>"; };
+		85AB639516C343DD004B4263 /* NZComboBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NZComboBox.m; sourceTree = "<group>"; };
+		85C03AF216C3765A00B089A3 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = up.png; path = resource/up.png; sourceTree = "<group>"; };
+		85C03AF316C3765A00B089A3 /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = down.png; path = resource/down.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +117,7 @@
 		857A549116BB5E8400CD0312 /* PublicLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				85C03AF116C3764900B089A3 /* Resource */,
 				858B43BE16C23658007C48E3 /* Encode */,
 				8540D49F16BF67F0008FA689 /* BasicObject */,
 				857A54AE16BB5FA900CD0312 /* UILibrary */,
@@ -145,6 +153,8 @@
 				857A54B216BB621100CD0312 /* NZViewElementDrawing.h */,
 				857A54B316BB621100CD0312 /* NZViewElementDrawing.m */,
 				857A54B516BB67A800CD0312 /* NZUILibrary.h */,
+				85AB639416C343DD004B4263 /* NZComboBox.h */,
+				85AB639516C343DD004B4263 /* NZComboBox.m */,
 			);
 			name = UILibrary;
 			sourceTree = "<group>";
@@ -156,6 +166,15 @@
 				858B43C316C24A69007C48E3 /* NSData+Encode.m */,
 			);
 			name = Encode;
+			sourceTree = "<group>";
+		};
+		85C03AF116C3764900B089A3 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				85C03AF216C3765A00B089A3 /* up.png */,
+				85C03AF316C3765A00B089A3 /* down.png */,
+			);
+			name = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +233,8 @@
 				857A54A016BB5E8500CD0312 /* Default@2x.png in Resources */,
 				857A54A216BB5E8500CD0312 /* Default-568h@2x.png in Resources */,
 				857A54A516BB5E8500CD0312 /* MainStoryboard.storyboard in Resources */,
+				85C03AF416C3765A00B089A3 /* up.png in Resources */,
+				85C03AF516C3765A00B089A3 /* down.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +253,7 @@
 				8540D4A216BF6830008FA689 /* NZStack.m in Sources */,
 				699150DE16BFE1A80030CC87 /* NZNotificationCenter.m in Sources */,
 				858B43C416C24A69007C48E3 /* NSData+Encode.m in Sources */,
+				85AB639616C343DD004B4263 /* NZComboBox.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

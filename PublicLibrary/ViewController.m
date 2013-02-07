@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "NZComboBox.h"
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -41,6 +42,14 @@
         NSArray *fontNames = [UIFont fontNamesForFamilyName:name];
         [self.fontNamesForFamily setObject:fontNames forKey:name];
     }
+    
+    NZComboBox *comboBox = [[NZComboBox alloc] initWithFrame:CGRectMake(0,100,320,40)];
+    for (int i= 0 ; i < 6; i ++) {
+        NZComboBoxSelection *selection = [[NZComboBoxSelection alloc] init];
+        selection.title = [[NSString stringWithFormat:@"%d",i] stringByAppendingString:@" - selection"];
+        [comboBox addSelection:selection];
+    }
+    [self.view addSubview:comboBox];
 }
 
 - (void)didReceiveMemoryWarning
