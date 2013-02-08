@@ -58,7 +58,7 @@
         self.rightView = self.rightButton;
         self.rightViewMode = UITextFieldViewModeAlways;
         self.showList = NO;
-        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(frame.origin.x, frame.origin.y + frame.size.height+1, frame.size.width, 0)];
+        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(frame.origin.x, frame.origin.y + frame.size.height, frame.size.width, 0)];
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
         self.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
@@ -103,28 +103,26 @@
     [self.selections insertObject:selection atIndex:index];
 }
 
+-(void)showAllSelections{
+    if (self.selectionsToShow.count == 0) {
+        self.selectionsToShow = [NSMutableArray arrayWithArray:self.selections];
+    }
+    [self resignFirstResponder];
+    CGFloat height = 0.0f;
+    if (self.selectionsToShow.count == 0) {
+        height = 10.0f;
+    }
+    else{
+        height = ListViewHeight < (self.selectionsToShow.count * ListViewCellHeight)?ListViewHeight:(self.selectionsToShow.count * ListViewCellHeight);
+    }
+    [self changeListViewHeightAnimation:height haveBorder:YES needReloadData:YES];
+}
 
 -(void)showListView{
     if (self.showList) {
         return;
     }
-    if (self.selectionsToShow.count == 0) {
-        self.selectionsToShow = [NSMutableArray arrayWithArray:self.selections];
-    }
-    [self.rightButton setImage:[UIImage imageNamed:@"up"] forState:UIControlStateNormal];
-    CGFloat height = 0.0f;
-    if (self.selectionsToShow.count == 0) {
-        height = 10.0f;
-        [self changeListViewHeightAnimation:height haveBorder:YES needReloadData:YES];
-    }
-    else{
-        height = ListViewHeight < (self.selectionsToShow.count * ListViewCellHeight)?ListViewHeight:(self.selectionsToShow.count * ListViewCellHeight);
-        [self changeListViewHeightAnimation:height haveBorder:YES needReloadData:YES];
-    }
-    if (self.tableView.superview == nil) {
-        [self.superview addSubview:self.tableView];
-    }
-    self.showList = YES;
+    [self showAllSelections];
 }
 
 -(void)hiddenListView{
@@ -132,9 +130,7 @@
         return;
     }
     [self.selectionsToShow removeAllObjects];
-    [self.rightButton setImage:[UIImage imageNamed:@"down"] forState:UIControlStateNormal];
     [self changeListViewHeightAnimation:0 haveBorder:NO needReloadData:NO];
-    self.showList = NO;
 }
 
 #pragma mark -
@@ -195,6 +191,10 @@
     }
     NZComboBox *obj = notification.object;
     if (obj == self) {
+        if (obj.text.length < 1) {
+            [self showAllSelections];
+            return;
+        }
         NSMutableArray *copy = [self.selections mutableCopy];
         for (NZComboBoxSelection *selection in copy) {
             if (![selection.title hasPrefix:obj.text]) {
@@ -236,6 +236,14 @@
 }
 
 -(void)changeListViewHeightAnimation:(CGFloat)height haveBorder:(BOOL)haveBorder needReloadData:(BOOL)needReloadData{
+    if (height > 0) {
+        self.showList = YES;
+        [self.rightButton setImage:[UIImage imageNamed:@"up"] forState:UIControlStateNormal];
+    }
+    else{
+        self.showList = NO;
+        [self.rightButton setImage:[UIImage imageNamed:@"down"] forState:UIControlStateNormal];
+    }
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.5];
     self.tableView.layer.masksToBounds = YES;
