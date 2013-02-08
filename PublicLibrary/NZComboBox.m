@@ -9,8 +9,8 @@
 #import "NZComboBox.h"
 #import <QuartzCore/QuartzCore.h>
 
-#define ListViewHeight 176
-#define ListViewCellHeight 44
+#define ListViewHeight 176.0f
+#define ListViewCellHeight 44.0f
 
 #pragma mark -
 #pragma mark -
@@ -58,10 +58,13 @@
         self.rightView = self.rightButton;
         self.rightViewMode = UITextFieldViewModeAlways;
         self.showList = NO;
-        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(frame.origin.x, frame.origin.y + frame.size.height, frame.size.width, 0)];
+        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(frame.origin.x, frame.origin.y + frame.size.height+1, frame.size.width, 0)];
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
+        self.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(editChanged:) name:UITextFieldTextDidChangeNotification object:self];
+        self.selectionsToShow = [[NSMutableArray alloc] initWithCapacity:0];
+        self.selections = [[NSMutableArray alloc] initWithCapacity:0];
     }
     return self;
 }
@@ -105,23 +108,19 @@
     if (self.showList) {
         return;
     }
-    self.selectionsToShow = [NSMutableArray arrayWithArray:self.selections];
+    if (self.selectionsToShow.count == 0) {
+        self.selectionsToShow = [NSMutableArray arrayWithArray:self.selections];
+    }
     [self.rightButton setImage:[UIImage imageNamed:@"up"] forState:UIControlStateNormal];
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.5];
     CGFloat height = 0.0f;
     if (self.selectionsToShow.count == 0) {
         height = 10.0f;
-        self.tableView.layer.masksToBounds = YES;
-        self.tableView.layer.borderWidth = 1.0f;
-        self.tableView.layer.borderColor = [[UIColor blackColor] CGColor];
+        [self changeListViewHeightAnimation:height haveBorder:YES needReloadData:YES];
     }
     else{
         height = ListViewHeight < (self.selectionsToShow.count * ListViewCellHeight)?ListViewHeight:(self.selectionsToShow.count * ListViewCellHeight);
+        [self changeListViewHeightAnimation:height haveBorder:YES needReloadData:YES];
     }
-    self.tableView.frame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y,self.tableView.frame.size.width , height);
-    [self.tableView reloadData];
-    [UIView commitAnimations];
     if (self.tableView.superview == nil) {
         [self.superview addSubview:self.tableView];
     }
@@ -134,19 +133,13 @@
     }
     [self.selectionsToShow removeAllObjects];
     [self.rightButton setImage:[UIImage imageNamed:@"down"] forState:UIControlStateNormal];
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.3];
-    self.tableView.frame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y,self.tableView.frame.size.width , 0);
-    [UIView commitAnimations];
+    [self changeListViewHeightAnimation:0 haveBorder:NO needReloadData:NO];
     self.showList = NO;
 }
 
 #pragma mark -
 #pragma mark tableViewDelegate
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (self.selectionsToShow.count == 0) {
-        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    }
     return self.selectionsToShow.count;
 }
 
@@ -190,32 +183,81 @@
 
 #pragma mark -
 #pragma mark - TextFieldDelegate
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    if (!self.showList) {
+        [self showListView];
+    }
+}
 
 -(void)editChanged:(NSNotification *)notification{
-    NSLog(@"%@",notification);
     if (![notification.object isKindOfClass:[NZComboBox class]]) {
         return ;
     }
     NZComboBox *obj = notification.object;
     if (obj == self) {
-        NSMutableArray *copy = [self.selectionsToShow mutableCopy];
+        NSMutableArray *copy = [self.selections mutableCopy];
         for (NZComboBoxSelection *selection in copy) {
             if (![selection.title hasPrefix:obj.text]) {
                 [self.selectionsToShow removeObject:selection];
             }
+            else {
+                if (![self.selectionsToShow containsObject:selection]) {
+                    [self.selectionsToShow addObject:selection];
+                }
+            }
         }
         copy = nil;
-        [self.tableView reloadData];
+        CGFloat height = self.selectionsToShow.count * ListViewCellHeight;
+        if (!self.showList) {
+            self.showList = YES;
+            height = MIN(height, ListViewHeight);
+            if (height == 0) {
+                height = 10.0f;
+            }
+            [self changeListViewHeightAnimation:height haveBorder:YES needReloadData:YES];
+            return;
+        }
+        if ( height < self.tableView.frame.size.height) {
+            if (height == 0) {
+                height = 10.0f;
+                [self changeListViewHeightAnimation:height haveBorder:YES needReloadData:YES];
+            }
+            else{
+                [self changeListViewHeightAnimation:height haveBorder:YES needReloadData:YES];
+            }
+        }
+        else if (height > self.tableView.frame.size.height){
+            if (height > ListViewCellHeight) {
+                height = ListViewCellHeight;
+            }
+            [self changeListViewHeightAnimation:height haveBorder:YES needReloadData:YES];
+        }
     }
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+-(void)changeListViewHeightAnimation:(CGFloat)height haveBorder:(BOOL)haveBorder needReloadData:(BOOL)needReloadData{
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.5];
+    self.tableView.layer.masksToBounds = YES;
+    if (haveBorder) {
+        self.tableView.layer.borderWidth = 1.0f;
+    }
+    else{
+        self.tableView.layer.borderWidth = 0;
+    }
+    if (height < ListViewHeight) {
+        self.tableView.scrollEnabled = NO;
+    }
+    else{
+        self.tableView.scrollEnabled = YES;
+    }
+    self.tableView.layer.borderColor = [[UIColor blackColor] CGColor];
+    self.tableView.frame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y,self.tableView.frame.size.width , height);
+    [self.tableView reloadData];
+    if (self.tableView.superview == nil) {
+        [self.superview addSubview:self.tableView];
+    }
+    [UIView commitAnimations];
 }
-*/
 
 @end
