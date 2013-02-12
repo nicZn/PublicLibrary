@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		699150DE16BFE1A80030CC87 /* NZNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 699150DD16BFE1A80030CC87 /* NZNotificationCenter.m */; };
-		8532861016C9D5A70063129C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 8532860F16C9D5A70063129C /* Reachability.m */; };
+		8532861016C9D5A70063129C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 8532860F16C9D5A70063129C /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		8532861216C9D6E70063129C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8532861116C9D6E70063129C /* SystemConfiguration.framework */; };
+		8532861516CA0FE20063129C /* NZHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8532861416CA0FE20063129C /* NZHttpRequest.m */; };
+		8532861916CA375A0063129C /* BaseSqlite.m in Sources */ = {isa = PBXBuildFile; fileRef = 8532861816CA375A0063129C /* BaseSqlite.m */; };
 		8540D4A216BF6830008FA689 /* NZStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 8540D4A116BF6830008FA689 /* NZStack.m */; };
 		857A548C16BB5E8400CD0312 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 857A548B16BB5E8400CD0312 /* UIKit.framework */; };
 		857A548E16BB5E8400CD0312 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 857A548D16BB5E8400CD0312 /* Foundation.framework */; };
@@ -34,6 +37,11 @@
 		699150DD16BFE1A80030CC87 /* NZNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NZNotificationCenter.m; path = BasicObject/NZNotificationCenter.m; sourceTree = "<group>"; };
 		8532860E16C9D5A70063129C /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = NetWork/Reachability.h; sourceTree = "<group>"; };
 		8532860F16C9D5A70063129C /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = NetWork/Reachability.m; sourceTree = "<group>"; };
+		8532861116C9D6E70063129C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8532861316CA0FE20063129C /* NZHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NZHttpRequest.h; path = NetWork/NZHttpRequest.h; sourceTree = "<group>"; };
+		8532861416CA0FE20063129C /* NZHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NZHttpRequest.m; path = NetWork/NZHttpRequest.m; sourceTree = "<group>"; };
+		8532861716CA375A0063129C /* BaseSqlite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseSqlite.h; path = SqlManager/BaseSqlite.h; sourceTree = "<group>"; };
+		8532861816CA375A0063129C /* BaseSqlite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseSqlite.m; path = SqlManager/BaseSqlite.m; sourceTree = "<group>"; };
 		8540D4A016BF6830008FA689 /* NZStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NZStack.h; path = BasicObject/NZStack.h; sourceTree = "<group>"; };
 		8540D4A116BF6830008FA689 /* NZStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NZStack.m; path = BasicObject/NZStack.m; sourceTree = "<group>"; };
 		857A548816BB5E8400CD0312 /* PublicLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PublicLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8532861216C9D6E70063129C /* SystemConfiguration.framework in Frameworks */,
 				857A548C16BB5E8400CD0312 /* UIKit.framework in Frameworks */,
 				857A548E16BB5E8400CD0312 /* Foundation.framework in Frameworks */,
 				857A549016BB5E8400CD0312 /* CoreGraphics.framework in Frameworks */,
@@ -84,8 +93,19 @@
 			children = (
 				8532860E16C9D5A70063129C /* Reachability.h */,
 				8532860F16C9D5A70063129C /* Reachability.m */,
+				8532861316CA0FE20063129C /* NZHttpRequest.h */,
+				8532861416CA0FE20063129C /* NZHttpRequest.m */,
 			);
 			name = NetWork;
+			sourceTree = "<group>";
+		};
+		8532861616CA37010063129C /* SQLManager */ = {
+			isa = PBXGroup;
+			children = (
+				8532861716CA375A0063129C /* BaseSqlite.h */,
+				8532861816CA375A0063129C /* BaseSqlite.m */,
+			);
+			name = SQLManager;
 			sourceTree = "<group>";
 		};
 		8540D49F16BF67F0008FA689 /* BasicObject */ = {
@@ -102,6 +122,7 @@
 		857A547F16BB5E8400CD0312 = {
 			isa = PBXGroup;
 			children = (
+				8532861116C9D6E70063129C /* SystemConfiguration.framework */,
 				857A549116BB5E8400CD0312 /* PublicLibrary */,
 				857A548A16BB5E8400CD0312 /* Frameworks */,
 				857A548916BB5E8400CD0312 /* Products */,
@@ -129,6 +150,7 @@
 		857A549116BB5E8400CD0312 /* PublicLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				8532861616CA37010063129C /* SQLManager */,
 				8532860D16C9D55D0063129C /* NetWork */,
 				85C03AF116C3764900B089A3 /* Resource */,
 				858B43BE16C23658007C48E3 /* Encode */,
@@ -268,6 +290,8 @@
 				858B43C416C24A69007C48E3 /* NSData+Encode.m in Sources */,
 				85AB639616C343DD004B4263 /* NZComboBox.m in Sources */,
 				8532861016C9D5A70063129C /* Reachability.m in Sources */,
+				8532861516CA0FE20063129C /* NZHttpRequest.m in Sources */,
+				8532861916CA375A0063129C /* BaseSqlite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
