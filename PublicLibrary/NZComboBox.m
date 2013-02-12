@@ -104,9 +104,7 @@
 }
 
 -(void)showAllSelections{
-    if (self.selectionsToShow.count == 0) {
-        self.selectionsToShow = [NSMutableArray arrayWithArray:self.selections];
-    }
+    self.selectionsToShow = [NSMutableArray arrayWithArray:self.selections];
     [self resignFirstResponder];
     CGFloat height = 0.0f;
     if (self.selectionsToShow.count == 0) {

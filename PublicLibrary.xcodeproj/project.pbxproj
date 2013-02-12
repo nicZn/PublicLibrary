@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		699150DE16BFE1A80030CC87 /* NZNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 699150DD16BFE1A80030CC87 /* NZNotificationCenter.m */; };
+		8532861016C9D5A70063129C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 8532860F16C9D5A70063129C /* Reachability.m */; };
 		8540D4A216BF6830008FA689 /* NZStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 8540D4A116BF6830008FA689 /* NZStack.m */; };
 		857A548C16BB5E8400CD0312 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 857A548B16BB5E8400CD0312 /* UIKit.framework */; };
 		857A548E16BB5E8400CD0312 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 857A548D16BB5E8400CD0312 /* Foundation.framework */; };
@@ -31,6 +32,8 @@
 /* Begin PBXFileReference section */
 		699150DC16BFE1A80030CC87 /* NZNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NZNotificationCenter.h; path = BasicObject/NZNotificationCenter.h; sourceTree = "<group>"; };
 		699150DD16BFE1A80030CC87 /* NZNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NZNotificationCenter.m; path = BasicObject/NZNotificationCenter.m; sourceTree = "<group>"; };
+		8532860E16C9D5A70063129C /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = NetWork/Reachability.h; sourceTree = "<group>"; };
+		8532860F16C9D5A70063129C /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = NetWork/Reachability.m; sourceTree = "<group>"; };
 		8540D4A016BF6830008FA689 /* NZStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NZStack.h; path = BasicObject/NZStack.h; sourceTree = "<group>"; };
 		8540D4A116BF6830008FA689 /* NZStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NZStack.m; path = BasicObject/NZStack.m; sourceTree = "<group>"; };
 		857A548816BB5E8400CD0312 /* PublicLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PublicLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +79,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8532860D16C9D55D0063129C /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				8532860E16C9D5A70063129C /* Reachability.h */,
+				8532860F16C9D5A70063129C /* Reachability.m */,
+			);
+			name = NetWork;
+			sourceTree = "<group>";
+		};
 		8540D49F16BF67F0008FA689 /* BasicObject */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +129,7 @@
 		857A549116BB5E8400CD0312 /* PublicLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				8532860D16C9D55D0063129C /* NetWork */,
 				85C03AF116C3764900B089A3 /* Resource */,
 				858B43BE16C23658007C48E3 /* Encode */,
 				8540D49F16BF67F0008FA689 /* BasicObject */,
@@ -254,6 +267,7 @@
 				699150DE16BFE1A80030CC87 /* NZNotificationCenter.m in Sources */,
 				858B43C416C24A69007C48E3 /* NSData+Encode.m in Sources */,
 				85AB639616C343DD004B4263 /* NZComboBox.m in Sources */,
+				8532861016C9D5A70063129C /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
